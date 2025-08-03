@@ -1,0 +1,167 @@
+/* ==== SERVICES SECTION ==== */
+.services-full-section {
+    width: 100vw;
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+    overflow: hidden;
+  }
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .services-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services-header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services-inner {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .services-grid {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+  }
+  
+  .service-block {
+    flex: 1;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    min-width: 0;
+  }
+  
+  .service-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+  
+  .service-block:hover img {
+    transform: scale(1.05);
+  }
+  
+  .service-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .service-block:hover .service-overlay {
+    opacity: 1;
+  }
+  
+  /* ==== PROJECTS PREVIEW SECTION (MATCHES SERVICES STYLE) ==== */
+  .projects-preview {
+    width: 100vw;
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+    overflow: hidden;
+  }
+  
+  .projects-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .projects-header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .project-card img {
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .hover-info {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1.5rem;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .project-card:hover .hover-info {
+    left: 0;
+  }
+  
+  /* ==== RESPONSIVE ==== */
+  @media (max-width: 768px) {
+    .services-grid {
+      flex-direction: column;
+    }
+  
+    .service-block {
+      height: 33vh;
+    }
+  
+    .service-overlay {
+      opacity: 1;
+      position: relative;
+      background: none;
+      color: black;
+    }
+  
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hover-info {
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+  

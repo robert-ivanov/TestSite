@@ -1,0 +1,56 @@
+.about-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height or adjust as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-section img.about-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.about-section .overlay-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+  border-radius: 10px;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.more-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffc107;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #e0a800;
+}
