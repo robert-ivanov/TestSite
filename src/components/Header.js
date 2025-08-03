@@ -1,26 +1,45 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
+import img from '../assets/logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const handleLinkClick = () => setIsOpen(false); // ✅ Close on link click
+  const handleLinkClick = () => setIsOpen(false);
 
   return (
     <header className="main-header">
       <div className="navbar">
-        <div className="logo">Logo</div>
+        <div className="logo">
+          <NavLink to="/" onClick={handleLinkClick}>
+            <img src={img} alt="Logo" />
+          </NavLink>
+        </div>
 
         <div className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <Link to="/" onClick={handleLinkClick}>Home</Link>
-          <Link to="/services" onClick={handleLinkClick}>Services</Link>
-          <Link to="/projects" onClick={handleLinkClick}>Projects</Link>
-          <Link to="/products" onClick={handleLinkClick}>Construction products</Link>
-          <Link to="/about" onClick={handleLinkClick}>About us</Link>
-          <Link to="/news" onClick={handleLinkClick}>News</Link>
-          <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
+          <NavLink to="/" onClick={handleLinkClick} end>
+            Home
+          </NavLink>
+          <NavLink to="/services" onClick={handleLinkClick}>
+            Services
+          </NavLink>
+          <NavLink to="/projects" onClick={handleLinkClick}>
+            Projects
+          </NavLink>
+          <NavLink to="/products" onClick={handleLinkClick}>
+            Construction products
+          </NavLink>
+          <NavLink to="/about" onClick={handleLinkClick}>
+            About us
+          </NavLink>
+          <NavLink to="/news" onClick={handleLinkClick}>
+            News
+          </NavLink>
+          <NavLink to="/contact" onClick={handleLinkClick}>
+            Contact
+          </NavLink>
         </div>
 
         <div className="language-select">

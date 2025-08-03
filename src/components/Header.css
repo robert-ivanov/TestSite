@@ -1,8 +1,12 @@
+/* Add in index.css or header-specific CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 .main-header {
-  background-color: #333;
+  background-color: black;
   color: white;
   width: 100%;
   padding: 1rem 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .navbar {
@@ -10,32 +14,61 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 0 2rem;
   position: relative;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
+/* Logo */
+.logo img {
+  height: 50px;
+  width: auto;
 }
 
+/* Navigation links */
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
+.nav-links a:hover {
+  color: #ffc107;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Language dropdown */
 .language-select {
   margin-left: 1rem;
 }
 
+.language-select select {
+  background: transparent;
+  border: 1px solid #fff;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Burger menu (mobile) */
 .burger {
   display: none;
   flex-direction: column;
@@ -49,7 +82,7 @@
   margin: 4px 0;
 }
 
-/* Mobile Styles */
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -57,7 +90,7 @@
     top: 100%;
     left: 0;
     flex-direction: column;
-    background-color: #444;
+    background-color: #333;
     width: 100%;
     padding: 1rem;
   }
