@@ -1,109 +1,122 @@
-/* Add in index.css or header-specific CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
 .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: black;
   color: white;
   width: 100%;
   padding: 1rem 0;
   font-family: 'Inter', sans-serif;
+  z-index: 1000;
 }
+
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: space-between;
   padding: 0 2rem;
-  position: relative;
+  flex-wrap: wrap;
 }
 
-/* Logo */
 .logo img {
   height: 50px;
-  width: auto;
 }
 
-/* Navigation links */
 .nav-links {
   display: flex;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  text-align: center;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 500;
-  padding-bottom: 6px;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffc107;
-}
-
-.nav-links a.active {
-  border-bottom: 2px solid #ffc107;
-}
-
-/* Language dropdown */
-.language-select {
-  margin-left: 1rem;
-}
-
-.language-select select {
-  background: transparent;
-  border: 1px solid #fff;
   color: white;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
+  font-weight: bold;
 }
 
-/* Burger menu (mobile) */
+/* Shared language selector style */
+.language-select select {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Show only on desktop */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+/* Burger menu hidden on desktop */
 .burger {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  gap: 5px;
+  margin-left: 1rem;
 }
 
 .burger .bar {
   width: 25px;
   height: 3px;
   background-color: white;
-  margin: 4px 0;
+  transition: 0.3s;
 }
 
-/* Responsive */
+/* ========== Mobile styles ========== */
 @media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 70px;
     left: 0;
+    right: 0;
     flex-direction: column;
-    background-color: #333;
+    background-color: black;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
+    z-index: 999;
+    text-align: center;
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  .burger {
-    display: flex;
+  .navbar {
+    flex-wrap: nowrap;
   }
 
-  .language-select {
+  /* Language selector visible inside burger menu */
+  .mobile-only {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  /* Hide desktop version */
+  .desktop-only {
     display: none;
   }
+}
+
+/* Optional body padding to avoid hidden content under fixed header */
+body {
+  padding-top: 80px;
+}
+.main-header.hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-header.visible {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
 }

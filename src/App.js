@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop'; // ✅ Import it
 
 import AboutSection from './components/AboutSection';
 import ServicesPreview from './components/ServicesPreview';
@@ -27,11 +28,11 @@ function Home() {
   );
 }
 
-
 function App() {
   return (
     <>
       <Header />
+      <ScrollToTop /> {/* ✅ Add this here */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
